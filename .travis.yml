@@ -1,0 +1,13 @@
+language: cpp
+dist: bionic
+os: linux
+compiler:
+  - gcc
+  - clang
+script:
+  - ./ciScripts/unitTestScript.sh
+branches:
+  only:
+    - master
+    - feature/ci_configuration
+    - "/^v\\d+\\./"
