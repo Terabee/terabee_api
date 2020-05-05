@@ -11,5 +11,4 @@ script:
 branches:
   only:
     - master
-    - ci_configuration
     - "/^v\\d+\\./"
