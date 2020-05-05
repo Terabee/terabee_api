@@ -1,6 +1,8 @@
+[![Build Status](https://travis-ci.com/Terabee/terabee_api.svg?branch=master)](https://travis-ci.com/Terabee/terabee_api) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # Terabee API
 
-Proof of concept of API for Terabee sensors. The idea is to simplify sensors usage on the client side by providing abstract layer between sensor communication protocol and client algorithms.
+Application Programming Interface for Terabee sensors. The idea is to simplify sensors usage on the client side by providing abstract layer between sensor communication protocol and client algorithms.
 
 ## To compile API
 

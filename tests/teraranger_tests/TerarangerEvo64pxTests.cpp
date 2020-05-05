@@ -41,25 +41,6 @@ std::ifstream::pos_type filesize(const std::string& filename)
   return in.tellg();
 }
 
-template<size_t N>
-std::ostream& operator<< (std::ostream& os, const std::array<float, N>& arr) {
-  os << "[";
-  for (size_t i = 0; i < arr.size(); i++) {
-    os << arr[i] << ", ";
-  }
-  os << "\b\b" << " ]";
-  return os;
-}
-
-std::ostream& operator<< (std::ostream& os, const std::vector<float>& arr) {
-  os << "[";
-  for (size_t i = 0; i < arr.size(); i++) {
-    os << arr[i] << ", ";
-  }
-  os << "\b\b" << " ]";
-  return os;
-}
-
 class TerarangerEvo64pxFixture: public testing::Test
 {
 protected:
@@ -273,9 +254,7 @@ TEST_F(TerarangerEvo64pxFixture, returnCorrectDistanceAmbientDataInBothModes)
   ASSERT_TRUE(sut_->initialize());
   ASSERT_TRUE(waitForRead());
   auto distance = sut_->getDistanceValues();
-  logger_->debug("Distance: {}", distance.distance);
   auto ambient = sut_->getAmbientValues();
-  logger_->debug("Ambient: {}", ambient.distance);
   ASSERT_FLOAT_EQ(expected_distance_value, *(distance.distance.end()-2));
   ASSERT_FLOAT_EQ(expected_ambient_value, ambient.distance.front());
   ASSERT_TRUE(sut_->shutDown());
@@ -286,7 +265,6 @@ TEST_F(TerarangerEvo64pxFixture, returnCorrectDistanceAmbientDataInBothModes)
   ASSERT_TRUE(waitForRead());
   expected_distance_value = 1.42;  // from only_distance_data
   distance = sut_->getDistanceValues();
-  logger_->debug("Distance: {}", distance.distance);
   ASSERT_FLOAT_EQ(expected_distance_value, distance.distance.back());
 }
 
@@ -296,7 +274,6 @@ TEST_F(TerarangerEvo64pxFixture, returnMinusInfForObjectTooCloseMeasurement)
   ASSERT_TRUE(sut_->initialize());
   ASSERT_TRUE(waitForRead());
   auto distance = sut_->getDistanceValues();
-  logger_->debug("Distance: {}", distance.distance);
   ASSERT_TRUE(std::all_of(distance.distance.begin(), distance.distance.end(),
     [](float v)
     {
@@ -311,7 +288,7 @@ TEST_F(TerarangerEvo64pxFixture, returnInfForObjectOutOfRange)
   ASSERT_TRUE(waitForRead());
   auto distance = sut_->getDistanceValues();
   ASSERT_TRUE(std::all_of(distance.distance.begin(), distance.distance.end(),
-    [this](float v)
+    [](float v)
     {
       return v == std::numeric_limits<float>::infinity();
     }));
