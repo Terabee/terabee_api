@@ -5,5 +5,5 @@ set -ev
 mkdir -p build
 cd build
 cmake -BUILD_TESTS=ON ../
-make
+make -j2
 make test

@@ -169,7 +169,7 @@ void TerarangerMultiflex::captureData()
     uint8_t mask = ring_buffer_[DATA_FRAME_SIZE-2];
     std::transform((uint16_t*)(ring_buffer_.data()+2),
       (uint16_t*)(ring_buffer_.data()+DATA_FRAME_SIZE-2),
-      current_dist_data_.distance.begin(), [mask, &i, this](uint16_t d) -> float
+      current_dist_data_.distance.begin(), [mask, &i](uint16_t d) -> float
       {
         i++;
         if ((mask & (1 << (i-1))) == 0) return std::nanf("");
