@@ -1,0 +1,16 @@
+# - Config file for the TerabeeApi package
+# It defines the following variables
+#  TerabeeApi_INCLUDE_DIRS - include directories for TerabeeApi
+#  TerabeeApi_LIBRARIES    - libraries to link against
+
+# Compute paths
+get_filename_component(TerabeeApi_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+set(TerabeeApi_INCLUDE_DIRS "${TerabeeApi_CMAKE_DIR}/../../../include")
+set(TerabeeApi_LIBRARIES "@TerabeeApi_LIB@")
+
+# This causes catkin simple to link against these libraries
+set(TerabeeApi_FOUND_CATKIN_PROJECT true)
+set(TERABEEAPI_FOUND_CATKIN_PROJECT true)
+
+include(FindPackageHandleStandardArgs)
+FIND_PACKAGE_HANDLE_STANDARD_ARGS(TerabeeApi DEFAULT_MSG TerabeeApi_LIBRARIES TerabeeApi_INCLUDE_DIRS)
