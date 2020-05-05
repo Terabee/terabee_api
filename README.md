@@ -1,4 +1,4 @@
-# TerabeeApi demo
+# Terabee API
 
 Proof of concept of API for Terabee sensors. The idea is to simplify sensors usage on the client side by providing abstract layer between sensor communication protocol and client algorithms.
 
