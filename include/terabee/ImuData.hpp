@@ -13,6 +13,10 @@
 namespace terabee
 {
 
+/**
+ * Structure to represent a Intertial Measurement Unit data returned from Terabee sensors.
+ * Size of the field `data` is dependent on the sensor type.
+ */
 struct ImuData
 {
   std::vector<float> data;
