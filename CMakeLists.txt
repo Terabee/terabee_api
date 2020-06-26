@@ -40,6 +40,8 @@ add_library(${LIB_NAME}
   src/teraranger/TerarangerThermalCommon.cpp
   src/teraranger/TerarangerTowerEvo.cpp
 )
+find_package(Boost 1.22 REQUIRED)
+target_include_directories(${LIB_NAME} PRIVATE ${Boost_INCLUDE_DIRS})
 target_include_directories(${LIB_NAME} PUBLIC include)
 target_link_libraries(${LIB_NAME} spdlog::spdlog)
 
