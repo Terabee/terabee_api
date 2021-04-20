@@ -6,8 +6,12 @@
  *
  * @Copyright Terabee 2020
  *
- * Common implementaion for TerarangerEvo3m and TerarangerEvo60m
- * (and maybe some more in the future)
+ * Common implementaion for
+ *  - TerarangerEvo3m
+ *  - TerarangerEvo15m
+ *  - TerarangerEvo40m
+ *  - TerarangerEvo60m
+ *  - TerarangerEvo600Hz
  */
 
 #include <array>

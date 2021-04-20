@@ -13,6 +13,8 @@
 
 #include "terabee/ITerarangerEvo3m.hpp"
 #include "terabee/ITerarangerEvo600Hz.hpp"
+#include "terabee/ITerarangerEvo15m.hpp"
+#include "terabee/ITerarangerEvo40m.hpp"
 #include "terabee/ITerarangerEvo60m.hpp"
 #include "terabee/ITerarangerEvo64px.hpp"
 #include "terabee/ITerarangerEvoMini.hpp"
@@ -35,6 +37,10 @@ public:
   std::unique_ptr<ITerarangerEvo3m> createTerarangerEvo3m(
     const std::string& serial_port) override;
   std::unique_ptr<ITerarangerEvo600Hz> createTerarangerEvo600Hz(
+    const std::string& serial_port) override;
+  std::unique_ptr<ITerarangerEvo15m> createTerarangerEvo15m(
+    const std::string& serial_port) override;
+  std::unique_ptr<ITerarangerEvo40m> createTerarangerEvo40m(
     const std::string& serial_port) override;
   std::unique_ptr<ITerarangerEvo60m> createTerarangerEvo60m(
     const std::string& serial_port) override;

@@ -10,6 +10,12 @@ target_link_libraries(ExampleReadEvo3m ${LIB_NAME})
 add_executable(ExampleReadEvo600Hz ExampleReadEvo600Hz.cpp)
 target_link_libraries(ExampleReadEvo600Hz ${LIB_NAME})
 
+add_executable(ExampleReadEvo15m ExampleReadEvo15m.cpp)
+target_link_libraries(ExampleReadEvo15m ${LIB_NAME})
+
+add_executable(ExampleReadEvo40m ExampleReadEvo40m.cpp)
+target_link_libraries(ExampleReadEvo40m ${LIB_NAME})
+
 add_executable(ExampleReadEvo60m ExampleReadEvo60m.cpp)
 target_link_libraries(ExampleReadEvo60m ${LIB_NAME})
 

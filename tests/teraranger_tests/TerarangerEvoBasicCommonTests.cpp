@@ -14,9 +14,13 @@
 #include "terabee/internal/logger/Logger.hpp"
 #include "terabee/internal/teraranger/TerarangerEvo3m.hpp"
 #include "terabee/internal/teraranger/TerarangerEvo600Hz.hpp"
+#include "terabee/internal/teraranger/TerarangerEvo15m.hpp"
+#include "terabee/internal/teraranger/TerarangerEvo40m.hpp"
 #include "terabee/internal/teraranger/TerarangerEvo60m.hpp"
 #include "terabee/ITerarangerEvo3m.hpp"
 #include "terabee/ITerarangerEvo600Hz.hpp"
+#include "terabee/ITerarangerEvo15m.hpp"
+#include "terabee/ITerarangerEvo40m.hpp"
 #include "terabee/ITerarangerEvo60m.hpp"
 
 #include "mocks/MockISerial.hpp"
@@ -28,9 +32,13 @@ using terabee::internal::crc::calcCrc8;
 using terabee::internal::logger::Logger;
 using terabee::internal::teraranger::TerarangerEvo3m;
 using terabee::internal::teraranger::TerarangerEvo600Hz;
+using terabee::internal::teraranger::TerarangerEvo15m;
+using terabee::internal::teraranger::TerarangerEvo40m;
 using terabee::internal::teraranger::TerarangerEvo60m;
 using terabee::ITerarangerEvo3m;
 using terabee::ITerarangerEvo600Hz;
+using terabee::ITerarangerEvo15m;
+using terabee::ITerarangerEvo40m;
 using terabee::ITerarangerEvo60m;
 
 using terabee::internal::serial_communication::MockISerial;
@@ -112,6 +120,8 @@ protected:
 using SensorTypes = ::testing::Types<
   TerarangerEvo3m,
   TerarangerEvo600Hz,
+  TerarangerEvo15m,
+  TerarangerEvo40m,
   TerarangerEvo60m
 >;
 TYPED_TEST_SUITE(TerarangerEvoBasicCommonFixture, SensorTypes);
