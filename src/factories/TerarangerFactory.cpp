@@ -1,7 +1,7 @@
 /**
  * @Author Pawel Ptasznik
  *
- * @Copyright Terabee 2020
+ * @Copyright Terabee 2021
  *
  */
 
