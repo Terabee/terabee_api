@@ -15,6 +15,8 @@
  *  - One of the interfaces documentation to learn how to use a particular sensor:
  *    - terabee::ITerarangerEvo3m
  *    - terabee::ITerarangerEvo600Hz
+ *    - terabee::ITerarangerEvo15m
+ *    - terabee::ITerarangerEvo40m
  *    - terabee::ITerarangerEvo60m
  *    - terabee::ITerarangerEvo64px
  *    - terabee::ITerarangerEvoMini
@@ -36,6 +38,8 @@
 
 #include "terabee/ITerarangerEvo3m.hpp"
 #include "terabee/ITerarangerEvo600Hz.hpp"
+#include "terabee/ITerarangerEvo15m.hpp"
+#include "terabee/ITerarangerEvo40m.hpp"
 #include "terabee/ITerarangerEvo60m.hpp"
 #include "terabee/ITerarangerEvo64px.hpp"
 #include "terabee/ITerarangerEvoMini.hpp"
@@ -70,6 +74,22 @@ public:
    * with device, returns nullptr.
    */
   virtual std::unique_ptr<ITerarangerEvo600Hz> createTerarangerEvo600Hz(
+    const std::string& serial_port) = 0;
+  /**
+   * \param serial_port name of the serial port device, e.g. `/dev/ttyACM0`
+   * \return pointer to Evo15m device connected to the host USB;
+   * If serial port cannot be opened, or if it is impossible to communicate
+   * with device, returns nullptr.
+   */
+  virtual std::unique_ptr<ITerarangerEvo15m> createTerarangerEvo15m(
+    const std::string& serial_port) = 0;
+  /**
+   * \param serial_port name of the serial port device, e.g. `/dev/ttyACM0`
+   * \return pointer to Evo40m device connected to the host USB;
+   * If serial port cannot be opened, or if it is impossible to communicate
+   * with device, returns nullptr.
+   */
+  virtual std::unique_ptr<ITerarangerEvo40m> createTerarangerEvo40m(
     const std::string& serial_port) = 0;
   /**
    * \param serial_port name of the serial port device, e.g. `/dev/ttyACM0`

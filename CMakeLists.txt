@@ -31,6 +31,8 @@ add_library(${LIB_NAME}
   src/teraranger/TerarangerBasicCommon.cpp
   src/teraranger/TerarangerEvo3m.cpp
   src/teraranger/TerarangerEvo600Hz.cpp
+  src/teraranger/TerarangerEvo15m.cpp
+  src/teraranger/TerarangerEvo40m.cpp
   src/teraranger/TerarangerEvo60m.cpp
   src/teraranger/TerarangerEvo64px.cpp
   src/teraranger/TerarangerEvoMini.cpp

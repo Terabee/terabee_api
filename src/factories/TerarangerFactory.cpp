@@ -1,7 +1,7 @@
 /**
  * @Author Pawel Ptasznik
  *
- * @Copyright Terabee 2020
+ * @Copyright Terabee 2021
  *
  */
 
@@ -12,6 +12,8 @@
 #include "terabee/internal/serial_communication/Serial.hpp"
 #include "terabee/internal/teraranger/TerarangerEvo3m.hpp"
 #include "terabee/internal/teraranger/TerarangerEvo600Hz.hpp"
+#include "terabee/internal/teraranger/TerarangerEvo15m.hpp"
+#include "terabee/internal/teraranger/TerarangerEvo40m.hpp"
 #include "terabee/internal/teraranger/TerarangerEvo60m.hpp"
 #include "terabee/internal/teraranger/TerarangerEvo64px.hpp"
 #include "terabee/internal/teraranger/TerarangerEvoMini.hpp"
@@ -38,6 +40,20 @@ std::unique_ptr<ITerarangerEvo600Hz> TerarangerFactory::createTerarangerEvo600Hz
   const std::string& serial_port)
 {
   return std::make_unique<teraranger::TerarangerEvo600Hz>(
+    std::make_shared<serial_communication::Serial>(serial_port));
+}
+
+std::unique_ptr<ITerarangerEvo15m> TerarangerFactory::createTerarangerEvo15m(
+  const std::string& serial_port)
+{
+  return std::make_unique<teraranger::TerarangerEvo15m>(
+    std::make_shared<serial_communication::Serial>(serial_port));
+}
+
+std::unique_ptr<ITerarangerEvo40m> TerarangerFactory::createTerarangerEvo40m(
+  const std::string& serial_port)
+{
+  return std::make_unique<teraranger::TerarangerEvo40m>(
     std::make_shared<serial_communication::Serial>(serial_port));
 }
 
