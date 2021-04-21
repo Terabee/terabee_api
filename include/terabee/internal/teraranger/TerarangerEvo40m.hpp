@@ -2,9 +2,9 @@
 #define TERARANGER_EVO_40M_HPP
 
 /**
- * @Author Pawel Ptasznik
+ * @Author Marcin Pilch
  *
- * @Copyright Terabee 2020
+ * @Copyright Terabee 2021
  *
  */
 

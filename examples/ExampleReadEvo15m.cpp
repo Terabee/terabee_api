@@ -1,7 +1,7 @@
 /**
- * @Author Pawel Ptasznik
+ * @Author Marcin Pilch
  *
- * @Copyright Terabee 2020
+ * @Copyright Terabee 2021
  *
  */
 
@@ -22,7 +22,7 @@ int main(int argc, char** argv)
 {
   if (argc != 2)
   {
-    std::cout << "usage: ./ExampleReadEvo60 DEVICE_NAME" << std::endl;
+    std::cout << "usage: ./ExampleReadEvo15 DEVICE_NAME" << std::endl;
     return -1;
   }
   std::signal(SIGTSTP, signal_handler);
